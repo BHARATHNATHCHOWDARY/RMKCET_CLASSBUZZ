@@ -170,4 +170,6 @@ if __name__ == "__main__":
     if not os.path.exists("uploads"):
         os.makedirs("uploads")
     import uvicorn
-    uvicorn.run(app, host="localhost", port=8002)
+    port = 10000  # Set your desired port
+    uvicorn.run(app, host="0.0.0.0", port=port)  # Listen on all interfaces
+
