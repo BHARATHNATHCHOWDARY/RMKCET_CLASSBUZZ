@@ -6,3 +6,5 @@ pdf2image
 pillow
 pywhatkit
 starlette
+pyautogui
+mouseinfo
