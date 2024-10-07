@@ -1,8 +1,12 @@
 services:
   - type: web
-    name: your-service-name
+    name: fastapi-whatsapp
     env: python
     plan: free
-    runtime: python-3.x  # Use the appropriate Python version
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn app:app --host 0.0.0.0 --port 9000
+    buildCommand: |
+      apt-get update && apt-get install -y xvfb x11-utils
+      pip install -r requirements.txt
+    startCommand: |
+      Xvfb :99 -screen 0 1024x768x16 &  # Start virtual display
+      export DISPLAY=:99  # Set display environment variable
+      uvicorn app:app --host 0.0.0.0 --port 9000
