@@ -8,5 +8,6 @@ services:
       pip install -r requirements.txt
     startCommand: |
       Xvfb :99 -screen 0 1024x768x16 &  # Start virtual display
+      sleep 3  # Ensure Xvfb has enough time to start
       export DISPLAY=:99  # Set display environment variable
       uvicorn app:app --host 0.0.0.0 --port 9000
