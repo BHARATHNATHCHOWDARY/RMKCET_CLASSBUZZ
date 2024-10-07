@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+jinja2
+fpdf
+pdf2image
+pillow
+pywhatkit
+starlette
